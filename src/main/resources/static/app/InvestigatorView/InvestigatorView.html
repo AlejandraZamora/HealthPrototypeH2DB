@@ -1,0 +1,30 @@
+<div>
+    <label> Los datos del paciente {{patientName}} </label>
+    <br><br>
+    <table class="table table-striped table-hover" ng-model="personsList">
+        <tbody>
+        <tr>
+            <th>       Nombre       </th>
+            <th></th>
+            <th>       Apellido       </th>
+            <th></th>
+            <th>       Dirección       </th>
+            <th></th>
+            <th>       Código Postal       </th>
+            <th></th>
+            <th>       Ciudad       </th>
+        </tr>
+        <tr ng-repeat="todo in personsList">
+            <td>{{todo.firstName}}</td>
+            <td></td>
+            <td>{{todo.name}}</td>
+            <td></td>
+            <td>{{todo.address.street}}</td>
+            <td></td>
+            <td>{{todo.address.zip}}</td>
+            <td></td>
+            <td>{{todo.address.city}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
