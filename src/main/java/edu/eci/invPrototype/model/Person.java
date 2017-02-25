@@ -3,6 +3,7 @@ package edu.eci.invPrototype.model;
 /**
  * Created by Andrés Felipe on 12/02/2017.
  */
+import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("all")
@@ -11,10 +12,21 @@ public class Person {
 
     }
 
-    public Person(String name,String firstName,Address address){
-        this.name=name;
-        this.firstName=firstName;
-        this.address=address;
+    public Person(Integer id, String name, String firstName, Address address) {
+        this.id = id;
+        this.name = name;
+        this.firstName = firstName;
+        this.address = address;
+    }
+
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     private String name;
@@ -61,7 +73,13 @@ public class Person {
         return ((this.firstName + " ") + this.name);
     }
 
-    public List<Person> getFriendsSortedByFullName() {
-        return friends;
+    private ArrayList<Diagnostic> diagnostics;
+
+    public ArrayList<Diagnostic> getDiagnostics() {
+        return diagnostics;
+    }
+
+    public void setDiagnostics(ArrayList<Diagnostic> diagnostics) {
+        this.diagnostics = diagnostics;
     }
 }

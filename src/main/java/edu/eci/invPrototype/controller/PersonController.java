@@ -25,9 +25,9 @@ public class PersonController {
         return new ResponseEntity<>(ps.getPersons(), HttpStatus.ACCEPTED);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/{personName}")
-    public ResponseEntity<?> getPerson(@PathVariable String personName) {
-        return new ResponseEntity<>(ps.getPerson(personName), HttpStatus.ACCEPTED);
+    @RequestMapping(method = RequestMethod.GET, path = "/{personId}")
+    public ResponseEntity<?> getPerson(@PathVariable Integer personId) {
+        return new ResponseEntity<>(ps.getPerson(personId), HttpStatus.ACCEPTED);
     }
 
     @RequestMapping(method = RequestMethod.POST)

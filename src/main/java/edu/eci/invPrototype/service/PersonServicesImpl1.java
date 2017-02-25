@@ -16,9 +16,9 @@ public class PersonServicesImpl1 implements PersonServices{
     List<Person> personList=new ArrayList<>();
 
     public PersonServicesImpl1(){
-        personList.add(new Person("Carlos","Lopez",new Address("Calle 12","55521","Bogota")));
-        personList.add(new Person("Andrea","Gomez",new Address("Calle 12","55521","Bogota")));
-        personList.add(new Person("Felipe","Sanchez",new Address("Calle 12","55521","Bogota")));
+        personList.add(new Person(1, "Carlos","Lopez",new Address("Calle 12","55521","Bogota")));
+        personList.add(new Person(2, "Andrea","Gomez",new Address("Calle 12","55521","Bogota")));
+        personList.add(new Person(3, "Felipe","Sanchez",new Address("Calle 12","55521","Bogota")));
     }
 
     @Override
@@ -35,18 +35,19 @@ public class PersonServicesImpl1 implements PersonServices{
     public void updatePerson(Person p) {
         for (Person pe :
                 personList) {
-            if (p.equals(pe)) {
+            if (p.getId()==pe.getId()) {
                 personList.add(personList.indexOf(pe), p);
             }
         }
     }
 
+
     @Override
-    public Person getPerson(String pName) {
+    public Person getPerson(Integer pId) {
         Person ans=null;
         for (Person pe :
                 personList) {
-            if(pe.getName().equals(pName)){
+            if(pe.getId()==pId){
                 ans=pe;
                 break;
             }
