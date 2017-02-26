@@ -16,8 +16,12 @@ angular.module('myApp.InvestigatorView', ['ngRoute'])
                 //success
                 function( value ){
                     $scope.personsList=value;
-                    $scope.diagnostics=$scope.personsList[0].diagnostics;
-                    console.info($scope.diagnostics);
+                    $scope.diagnostics=[];
+                    for (var i = 0; i < $scope.personsList.length; i++) {
+                        if($scope.personsList[i].diagnostics.length >= 1){
+                            $scope.diagnostics.push($scope.personsList[i].diagnostics[0]);
+                        }
+                    }
                 },
                 //error
                 function( error ){

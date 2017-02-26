@@ -13,6 +13,8 @@ angular.module('myApp', [
   'myApp.ControlRegister',
   'myApp.CommentsView',
   'myApp.CommentRegister',
+  'myApp.LoginView',
+  'myApp.PatientChoiceView',
   'myApp.version',
   'services.factory'
 ]).

@@ -22,17 +22,17 @@ angular.module('myApp.ControlRegister', ['ngRoute'])
             .$promise.then(
                     //success
                     function( value ){
-                        $scope.person=value;
-                        $scope.person.diagnostics.push($scope.diagnostic);
-                        persons.update($scope.person)
+                        $scope.personT=value;
+                        $scope.personT.diagnostics.push($scope.diagnostic);
+                        persons.update($scope.personT)
                         .$promise.then(
                             //success
                             function(value){
-                                console.log("Patient update"+ $scope.person.diagnostics);
+                                console.log("Patient update"+ $scope.personT.diagnostics);
                             },
                             //error
                             function( error ){
-                                alert("El paciente no se pudo actualizar");
+                                console.log("El paciente no se pudo actualizar");
                             }
 
                         );
@@ -42,6 +42,6 @@ angular.module('myApp.ControlRegister', ['ngRoute'])
                         alert("El paciente no se encuentra registrado");
                     }
             );
-            $location.path("ControlView");
+            $location.path("PatientView");
         };
 }]);

@@ -35,8 +35,14 @@ public class PersonServicesImpl1 implements PersonServices{
         cs.add(c1);cs.add(c2);cs.add(c3);cs.add(c4);
         p.setComments(cs);
         personList.add(p);
-        personList.add(new Person(2, "Andrea","Gomez",new Address("Calle 12","55521","Bogota")));
-        personList.add(new Person(3, "Felipe","Sanchez",new Address("Calle 12","55521","Bogota")));
+        Person p1=new Person(2, "Andrea","Gomez",new Address("Calle 12","55521","Bogota"));
+        p1.setComments(cs);
+        p1.setDiagnostics(ds);
+        personList.add(p1);
+        Person p2=new Person(3, "Felipe","Sanchez",new Address("Calle 12","55521","Bogota"));
+        p2.setComments(cs);
+        p2.setDiagnostics(ds);
+        personList.add(p2);
     }
 
     @Override
@@ -54,7 +60,8 @@ public class PersonServicesImpl1 implements PersonServices{
         for (Person pe :
                 personList) {
             if (p.getId()==pe.getId()) {
-                personList.add(personList.indexOf(pe), p);
+                personList.remove(personList.indexOf(pe));
+                personList.add(p);
             }
         }
     }

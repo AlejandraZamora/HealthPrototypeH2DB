@@ -19,7 +19,6 @@
                         <thead>
                         <tr>
                             <th>Fecha de control</th>
-                            <th>Nombre del paciente</th>
                             <th>Presión arterial sistólica (mmHg)</th>
                             <th>Presión arterial diastólica (mmHg)</th>
                             <th>Colesterol en la sangre (mg/dl)</th>
@@ -27,9 +26,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="d in diagnostics" >
-                            <td>{{d.date}}</td>
-                            <th>{{d.name}}</th>
+                        <tr ng-repeat="d in diagnostics">
+                            <td>{{d.date | date:"dd/MMMM/yyyy"}}</td>
                             <td>{{d.systolicPressure}}</td>
                             <td>{{d.diastolicPressure}}</td>
                             <td>{{d.bloodCholesterol}}</td>

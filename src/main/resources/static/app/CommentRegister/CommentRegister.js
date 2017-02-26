@@ -12,10 +12,10 @@ angular.module('myApp.CommentRegister', ['ngRoute'])
 .controller('CommentRegisterCtrl', ['$rootScope', '$scope', 'person','persons','$http','$resource', '$location', function ($rootScope, $scope, person, persons, $http, $resource, $location) {
         $scope.title=null;
         $scope.description=null;
+        $scope.date=new Date();
         $scope.pId=$rootScope.pId;
         $scope.saveComment= function(){
-            $scope.comment={"description":$scope.description,"title":$scope.title};
-            $scope.diagnostic={"systolicPressure":$scope.siPresuare,"diastolicPressure":$scope.diPresuare,"bloodCholesterol":$scope.cholesterol,"heartRate":$scope.cardiacRythm,"date":$scope.date};
+            $scope.comment={"date":$scope.date,"description":$scope.description,"title":$scope.title};
             person.get({personId:""+$scope.pId})
             .$promise.then(
                     //success
@@ -30,7 +30,7 @@ angular.module('myApp.CommentRegister', ['ngRoute'])
                             },
                             //error
                             function( error ){
-                                alert("El paciente no se pudo actualizar");
+                                console.log("El paciente no se pudo actualizar");
                             }
 
                         );

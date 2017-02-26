@@ -11,7 +11,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
      $scope.continueP=function(){
-         $location.path("PatientAutorization");
+         $location.path("PatientChoiceView");
      }
      $scope.continueD=function(){
               $location.path("DoctorView");
