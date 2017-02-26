@@ -1,6 +1,7 @@
 package edu.eci.invPrototype.service;
 
 import edu.eci.invPrototype.model.Address;
+import edu.eci.invPrototype.model.Comment;
 import edu.eci.invPrototype.model.Diagnostic;
 import edu.eci.invPrototype.model.Person;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,13 @@ public class PersonServicesImpl1 implements PersonServices{
         ArrayList<Diagnostic> ds=new ArrayList<Diagnostic>();
         ds.add(d1);ds.add(d2);ds.add(d3);ds.add(d4);
         p.setDiagnostics(ds);
+        Comment c1=new Comment(new Date(2017,01,24),"Haga ejercicio","Bajo ritmo cardiaco");
+        Comment c2=new Comment(new Date(2017,01,29),"Coma menos grasas","Nivel alto de colesterol");
+        Comment c3=new Comment(new Date(2017,02,01),"Disminuya la cantida de sal en su dieta","Presión arterial alta");
+        Comment c4=new Comment(new Date(2017,02,16),"Aumente el dulce en su dieta","Presión baja");
+        ArrayList<Comment> cs=new ArrayList<Comment>();
+        cs.add(c1);cs.add(c2);cs.add(c3);cs.add(c4);
+        p.setComments(cs);
         personList.add(p);
         personList.add(new Person(2, "Andrea","Gomez",new Address("Calle 12","55521","Bogota")));
         personList.add(new Person(3, "Felipe","Sanchez",new Address("Calle 12","55521","Bogota")));
@@ -78,5 +86,20 @@ public class PersonServicesImpl1 implements PersonServices{
         diagnostics.add(d);
         p.setDiagnostics(diagnostics);
         System.out.println(d.getBloodCholesterol()+"  "+p.getDiagnostics().get(0).getBloodCholesterol());
+    }
+
+    @Override
+    public List<Comment> getPersonComments(Integer personId) {
+        Person p=this.getPerson(personId);
+        return p.getComments();
+    }
+
+    @Override
+    public void postPersonComment(Integer personId, Comment c) {
+        Person p=this.getPerson(personId);
+        ArrayList<Comment> comments=p.getComments();
+        c.setDate(new Date());
+        comments.add(c);
+        p.setComments(comments);
     }
 }

@@ -9,7 +9,7 @@ angular.module('myApp.DoctorView', ['ngRoute'])
   });
 }])
 
-.controller('DoctorViewCtrl', ['$rootScope', '$scope', 'person', function ($rootScope, $scope, person) {
+.controller('DoctorViewCtrl', ['$rootScope', '$scope', 'person','$location', function ($rootScope, $scope, person,$location) {
 
     $scope.patientId=null;
     $scope.found=false;
@@ -22,6 +22,7 @@ angular.module('myApp.DoctorView', ['ngRoute'])
                     $scope.found=true;
                     $scope.person=value;
                     $scope.diagnostics=$scope.person.diagnostics;
+                    $scope.comments=$scope.person.comments;
                 },
                 //error
                 function( error ){
@@ -29,6 +30,10 @@ angular.module('myApp.DoctorView', ['ngRoute'])
                 }
         );
 
+    };
+    $scope.continueCR=function(){
+        $rootScope.pId=$scope.patientId;
+        $location.path("CommentRegister");
     };
 
 }]);

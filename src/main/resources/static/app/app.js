@@ -11,6 +11,8 @@ angular.module('myApp', [
   'myApp.InvestigatorView',
   'myApp.ControlView',
   'myApp.ControlRegister',
+  'myApp.CommentsView',
+  'myApp.CommentRegister',
   'myApp.version',
   'services.factory'
 ]).

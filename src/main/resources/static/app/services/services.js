@@ -8,6 +8,9 @@ angular.module('services.factory', ['ngRoute', 'ngResource'])
 .factory('diagnostics', function($resource) {
      return $resource('/person/:personId/diagnostic',{},{ 'get': { method: 'GET', isArray: true}});
  })
+.factory('comments', function($resource) {
+     return $resource('/person/:personId/comment',{},{ 'get': { method: 'GET', isArray: true}});
+ })
 .factory('persons', function($resource) {
     return $resource('/person',{},{ 'get': { method: 'GET', isArray: true}, 'update': { method: 'PUT', isArray: false}});
 });

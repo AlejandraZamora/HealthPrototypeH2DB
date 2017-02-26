@@ -9,9 +9,21 @@ angular.module('myApp.PatientView', ['ngRoute'])
   });
 }])
 
-.controller('PatientViewCtrl', ['$rootScope', '$scope', 'person', '$location', function ($rootScope, $scope, person,$location) {
+.controller('PatientViewCtrl', ['$rootScope', '$scope', 'person', '$location', 'comments', function ($rootScope, $scope, person,$location, comments) {
 
     $scope.person=$rootScope.person;
+    comments.get({personId:""+1})
+            .$promise.then(
+                    //success
+                    function( value ){
+                        $rootScope.comments=value;
+                        $scope.cant=$scope.comments.length;
+                    },
+                    //error
+                    function( error ){
+                        alert("El paciente no se encuentra registrado");
+                    }
+            );
 
     $scope.continueCR=function(){
         $location.path("ControlRegister");
@@ -19,5 +31,9 @@ angular.module('myApp.PatientView', ['ngRoute'])
 
     $scope.continueCV=function(){
         $location.path("ControlView");
+    };
+
+    $scope.continueCS=function(){
+        $location.path("CommentsView")
     };
 }]);

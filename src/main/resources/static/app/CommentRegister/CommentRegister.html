@@ -19,32 +19,18 @@
                                 <form role="form">
                                     <div class="form-group">
 
-                                        <label>Fecha del control</label>
+                                        <label> Title </label>
                                         <br><br>
-                                        <input type="date" ng-model="date">
-                                        <br><br>
-
-                                        <label> Presión arterial sistólica (mmHg) </label>
-                                        <br><br>
-                                        <input type="number" ng-model="siPresuare">
+                                        <input type="String" ng-model="title">
                                         <br><br>
 
                                         <label> Presión arterial diastólica (mmHg) </label>
                                         <br><br>
-                                        <input type="number" ng-model="diPresuare">
+                                        <textarea class="form-control" rows="3" ng-model="description"></textarea>
                                         <br><br>
 
-                                        <label> Colesterol en la sangre (mg/dl) </label>
-                                        <br><br>
-                                        <input type="number" ng-model="cholesterol">
-                                        <br><br>
-
-                                        <label> Ritmo cardiáco (Latidos por minuto) </label>
-                                        <br><br>
-                                        <input type="number" ng-model="cardiacRythm">
-                                        <br><br>
                                     </div>
-                                    <button type="submit" class="btn btn-default" ng-click="saveRegister()">Aceptar</button>
+                                    <button type="submit" class="btn btn-default" ng-click="saveComment()">Aceptar</button>
                                     <button type="reset" class="btn btn-default">Reiniciar</button>
                                 </form>
                             </div>

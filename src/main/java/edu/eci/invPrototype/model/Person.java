@@ -19,6 +19,16 @@ public class Person {
         this.address = address;
     }
 
+    private ArrayList<Comment> comments;
+
+    public ArrayList<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(ArrayList<Comment> comments) {
+        this.comments = comments;
+    }
+
     private Integer id;
 
     public Integer getId() {

@@ -10,7 +10,8 @@ angular.module('myApp.ControlView', ['ngRoute'])
 }])
 
 .controller('ControlViewCtrl', ['$rootScope', '$scope', 'diagnostics', function ($rootScope, $scope, diagnostics) {
-    diagnostics.get({personId:""+$rootScope.person.id})
+    $rootScope.person.id
+    diagnostics.get({personId:""+1234})
     .$promise.then(
             //success
             function( value ){

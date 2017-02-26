@@ -42,6 +42,31 @@
                         </tr>
                         </tbody>
                     </table>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Comentarios o recomendaciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="c in comments">
+                            <td>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        {{c.title}}
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>{{c.description}}</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        {{c.date}}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-success" ng-click="continueCR()">Agregar Comentario</button>
                     <!-- /.table-responsive -->
                 </div>
                 <!-- /.panel-body -->

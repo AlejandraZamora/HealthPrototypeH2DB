@@ -1,5 +1,6 @@
 package edu.eci.invPrototype.controller;
 
+import edu.eci.invPrototype.model.Comment;
 import edu.eci.invPrototype.model.Diagnostic;
 import edu.eci.invPrototype.model.Person;
 import edu.eci.invPrototype.service.PersonServices;
@@ -39,6 +40,17 @@ public class PersonController {
     @RequestMapping(method = RequestMethod.POST, path = "/{personId}/diagnostic")
     public ResponseEntity<?> postPersonDiagnostics(@PathVariable Integer personId, @RequestBody Diagnostic d) {
         ps.postPersonDiagnostics(personId, d);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/{personId}/comment")
+    public ResponseEntity<?> getPersonComments(@PathVariable Integer personId) {
+        return new ResponseEntity<>(ps.getPersonComments(personId), HttpStatus.ACCEPTED);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/{personId}/comment")
+    public ResponseEntity<?> postPersonComment(@PathVariable Integer personId, @RequestBody Comment c) {
+        ps.postPersonComment(personId, c);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
