@@ -16,7 +16,8 @@ angular.module('myApp.InvestigatorView', ['ngRoute'])
                 //success
                 function( value ){
                     $scope.personsList=value;
-                    console.info(value);
+                    $scope.diagnostics=$scope.personsList[0].diagnostics;
+                    console.info($scope.diagnostics);
                 },
                 //error
                 function( error ){

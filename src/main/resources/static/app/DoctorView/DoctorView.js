@@ -11,16 +11,17 @@ angular.module('myApp.DoctorView', ['ngRoute'])
 
 .controller('DoctorViewCtrl', ['$rootScope', '$scope', 'person', function ($rootScope, $scope, person) {
 
-    $scope.patientName=null;
+    $scope.patientId=null;
     $scope.found=false;
     $scope.consultar=function(){
         $scope.busy=true;
-        person.get({personName:""+$scope.patientName})
+        person.get({personId:""+$scope.patientId})
         .$promise.then(
                 //success
                 function( value ){
                     $scope.found=true;
                     $scope.person=value;
+                    $scope.diagnostics=$scope.person.diagnostics;
                 },
                 //error
                 function( error ){

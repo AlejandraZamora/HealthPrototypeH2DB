@@ -1,5 +1,6 @@
 package edu.eci.invPrototype.controller;
 
+import edu.eci.invPrototype.model.Diagnostic;
 import edu.eci.invPrototype.model.Person;
 import edu.eci.invPrototype.service.PersonServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,17 @@ public class PersonController {
     @RequestMapping(method = RequestMethod.GET, path = "/{personId}")
     public ResponseEntity<?> getPerson(@PathVariable Integer personId) {
         return new ResponseEntity<>(ps.getPerson(personId), HttpStatus.ACCEPTED);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/{personId}/diagnostic")
+    public ResponseEntity<?> getPersonDiagnostics(@PathVariable Integer personId) {
+        return new ResponseEntity<>(ps.getPersonDiagnostics(personId), HttpStatus.ACCEPTED);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/{personId}/diagnostic")
+    public ResponseEntity<?> postPersonDiagnostics(@PathVariable Integer personId, @RequestBody Diagnostic d) {
+        ps.postPersonDiagnostics(personId, d);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
     @RequestMapping(method = RequestMethod.POST)

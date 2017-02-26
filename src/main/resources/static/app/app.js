@@ -9,6 +9,8 @@ angular.module('myApp', [
   'myApp.PatientRegister',
   'myApp.DoctorView',
   'myApp.InvestigatorView',
+  'myApp.ControlView',
+  'myApp.ControlRegister',
   'myApp.version',
   'services.factory'
 ]).

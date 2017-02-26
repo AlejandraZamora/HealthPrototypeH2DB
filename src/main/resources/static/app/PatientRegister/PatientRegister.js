@@ -10,6 +10,7 @@ angular.module('myApp.PatientRegister', ['ngRoute'])
 }])
 
 .controller('PatientRegisterCtrl', ['$rootScope', '$scope', 'persons','$http','$resource', '$location', function ($rootScope, $scope, persons, $http, $resource, $location) {
+        $scope.id=null;
         $scope.name=null;
         $scope.lastName=null;
         $scope.address=null;
@@ -19,7 +20,7 @@ angular.module('myApp.PatientRegister', ['ngRoute'])
 
         $scope.savePerson= function(){
             $rootScope.nameP=$scope.name;
-            $rootScope.person={"name":$scope.lastName, "firstName":$scope.name, "address":{"street":$scope.address,"zip":""+$scope.zip,"city":$scope.city}};
+            $rootScope.person={"id":$scope.id,"name":$scope.lastName, "firstName":$scope.name, "address":{"street":$scope.address,"zip":""+$scope.zip,"city":$scope.city}};
             persons.save($scope.person,function(){
                 console.info("Person saved   "+ $rootScope.person.name);
             });

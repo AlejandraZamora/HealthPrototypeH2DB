@@ -1,7 +1,9 @@
 package edu.eci.invPrototype.service;
 
+import edu.eci.invPrototype.model.Diagnostic;
 import edu.eci.invPrototype.model.Person;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,4 +14,6 @@ public interface PersonServices {
     public List<Person> getPersons();
     public void updatePerson(Person p);
     public Person getPerson(Integer pId);
+    public List<Diagnostic> getPersonDiagnostics(Integer personId);
+    public void postPersonDiagnostics(Integer personId, Diagnostic d);
 }

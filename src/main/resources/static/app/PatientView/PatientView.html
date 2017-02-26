@@ -1,27 +1,89 @@
-<div>
+<div ng-include='"template.html"'></div>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Tus Datos</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Datos personales
+                </div>
+                <div class="panel-body">
+                    <h2> Número de Identificación
+                        <br><br>
+                        <small> {{person.id}} </small>
+                    </h2>
+                    <br><br>
 
-    <label> Tus datos </label>
-    <br><br>
+                    <h2> Nombre
+                        <br><br>
+                        <small> {{person.firstName}} </small>
+                    </h2>
+                    <br><br>
 
-    <label> Nombre.......     </label>
-    <label> {{person.firstName}} </label>
-    <br><br>
+                    <h2> Apellido
+                        <br><br>
+                        <small> {{person.name}} </small>
+                    </h2>
+                    <br><br>
 
-    <label> Apellido.......      </label>
-    <label> {{person.name}} </label>
-    <br><br>
+                    <h2> Dirección
+                        <br><br>
+                        <small> {{person.address.street}} </small>
+                    </h2>
+                    <br><br>
 
-    <label> Dirección.......      </label>
-    <label> {{person.address.street}} </label>
-    <br><br>
+                    <h2> Código Postal
+                        <br><br>
+                        <small> {{person.address.zip}} </small>
+                    </h2>
+                    <br><br>
 
-    <label> Código Postal.......      </label>
-    <label> {{person.address.zip}} </label>
-    <br><br>
+                    <h2> Ciudad
+                        <br><br>
+                        <small> {{person.address.city}} </small>
+                    </h2>
+                    <br><br>
 
-    <label> Ciudad.......      </label>
-    <label> {{person.address.city}} </label>
-    <br><br>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Datos de Control
+                </div>
+                <div class="panel-body">
+                    <h1>Registro de datos de control
+                        <small>Con esta opción puedes registrar los datos de control para el diagnóstico médico.</small>
+                    </h1>
+                    <br><br>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="continueCR()">Nuevo Registro de Datos</button>
+                    <br><br>
+                    <h1>Consultar datos de control
+                        <small>Con esta opción puedes consultar los datos de control para el diagnóstico médico.</small>
+                    </h1>
+                    <br><br>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="continueCV()">Consultar datos de control</button>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
 
 </div>
+<!-- /#wrapper -->
 

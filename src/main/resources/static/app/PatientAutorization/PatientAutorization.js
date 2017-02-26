@@ -10,7 +10,7 @@ angular.module('myApp.PatientAutorization', ['ngRoute'])
 }])
 
 .controller('PatientAutorizationCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
-    $scope.continue=function(){
+    $scope.continueRegister=function(){
         $location.path("PatientRegister");
     }
 

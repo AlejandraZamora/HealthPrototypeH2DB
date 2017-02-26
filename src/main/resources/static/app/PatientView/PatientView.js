@@ -9,8 +9,15 @@ angular.module('myApp.PatientView', ['ngRoute'])
   });
 }])
 
-.controller('PatientViewCtrl', ['$rootScope', '$scope', 'person', function ($rootScope, $scope, person) {
+.controller('PatientViewCtrl', ['$rootScope', '$scope', 'person', '$location', function ($rootScope, $scope, person,$location) {
 
     $scope.person=$rootScope.person;
 
+    $scope.continueCR=function(){
+        $location.path("ControlRegister");
+    };
+
+    $scope.continueCV=function(){
+        $location.path("ControlView");
+    };
 }]);

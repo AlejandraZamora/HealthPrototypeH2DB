@@ -1,12 +1,21 @@
-<div>
-    <title>Aplicación de Salud</title>
-    <br><br>
-    <label>Bienvenido, Esta es una aplicación para consultar y registrar datos dependiendo del rol que escojas</label>
-    <br><br>
-    <label>Escoge tu rol: </label>
-    <ul class="menu">
-        <li><a href="#!/PatientAutorization">Paciente</a></li>
-        <li><a href="#!/DoctorView">Doctor</a></li>
-        <li><a href="#!/InvestigatorView">Investigador</a></li>
-    </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Bienvenido, Esta es una aplicación para consultar y registrar datos dependiendo del rol que escojas</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <fieldset>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <a ng-click="continueP()" class="btn btn-lg btn-success btn-block">Paciente</a>
+                            <a ng-click="continueD()" class="btn btn-lg btn-success btn-block">Doctor</a>
+                            <a ng-click="continueI()" class="btn btn-lg btn-success btn-block">Investigador</a>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
