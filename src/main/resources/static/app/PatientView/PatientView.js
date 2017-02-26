@@ -9,15 +9,23 @@ angular.module('myApp.PatientView', ['ngRoute'])
   });
 }])
 
-.controller('PatientViewCtrl', ['$rootScope', '$scope', 'person', '$location', 'comments', function ($rootScope, $scope, person,$location, comments) {
+.controller('PatientViewCtrl', ['$rootScope', '$scope', 'person', '$location', function ($rootScope, $scope, person,$location) {
 
     $scope.person=$rootScope.person;
-    comments.get({personId:""+1})
+    person.get({personId:""+$rootScope.idPerson})
             .$promise.then(
                     //success
                     function( value ){
-                        $rootScope.comments=value;
-                        $scope.cant=$scope.comments.length;
+                        $scope.personC=value;
+                        $rootScope.comments=$scope.personC.comments;
+                        if (typeof $rootScope.comments == "undefined"){
+                            $scope.recomendaciones="No tienes ninguna recomendación";
+                            $scope.cant=undefined;
+                        }
+                        if(typeof $rootScope.comments != "undefined"){
+                            $scope.recomendaciones="Tienes recomendaciones de tú médico!!";
+                            $scope.cant=$scope.comments.length;
+                        }
                     },
                     //error
                     function( error ){

@@ -9,7 +9,7 @@ angular.module('myApp.ControlRegister', ['ngRoute'])
   });
 }])
 
-.controller('ControlRegisterCtrl', ['$rootScope', '$scope', 'diagnostics','$http','$resource', '$location', function ($rootScope, $scope, diagnostics, $http, $resource, $location) {
+.controller('ControlRegisterCtrl', ['$rootScope', '$scope', 'persons','person','$http','$resource', '$location', function ($rootScope, $scope, persons,person, $http, $resource, $location) {
         $scope.date=null;
         $scope.siPresuare=null;
         $scope.diPresuare=null;
@@ -18,9 +18,30 @@ angular.module('myApp.ControlRegister', ['ngRoute'])
 
         $scope.saveRegister= function(){
             $scope.diagnostic={"systolicPressure":$scope.siPresuare,"diastolicPressure":$scope.diPresuare,"bloodCholesterol":$scope.cholesterol,"heartRate":$scope.cardiacRythm,"date":$scope.date};
-            diagnostics.save({personId:""+$rootScope.person.id},$scope.diagnostic,function(){
-                console.log("Diagnostic save "+$scope.diagnostic);
-            });
+            person.get({personId:""+$rootScope.idPerson})
+            .$promise.then(
+                    //success
+                    function( value ){
+                        $scope.person=value;
+                        $scope.person.diagnostics.push($scope.diagnostic);
+                        persons.update($scope.person)
+                        .$promise.then(
+                            //success
+                            function(value){
+                                console.log("Patient update"+ $scope.person.diagnostics);
+                            },
+                            //error
+                            function( error ){
+                                alert("El paciente no se pudo actualizar");
+                            }
+
+                        );
+                    },
+                    //error
+                    function( error ){
+                        alert("El paciente no se encuentra registrado");
+                    }
+            );
             $location.path("ControlView");
         };
 }]);

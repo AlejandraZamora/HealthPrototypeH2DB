@@ -73,33 +73,4 @@ public class PersonServicesImpl1 implements PersonServices{
         return ans;
     }
 
-    @Override
-    public List<Diagnostic> getPersonDiagnostics(Integer personId) {
-        Person p=this.getPerson(personId);
-        return p.getDiagnostics();
-    }
-
-    @Override
-    public void postPersonDiagnostics(Integer personId, Diagnostic d) {
-        Person p=this.getPerson(personId);
-        ArrayList<Diagnostic> diagnostics=p.getDiagnostics();
-        diagnostics.add(d);
-        p.setDiagnostics(diagnostics);
-        System.out.println(d.getBloodCholesterol()+"  "+p.getDiagnostics().get(0).getBloodCholesterol());
-    }
-
-    @Override
-    public List<Comment> getPersonComments(Integer personId) {
-        Person p=this.getPerson(personId);
-        return p.getComments();
-    }
-
-    @Override
-    public void postPersonComment(Integer personId, Comment c) {
-        Person p=this.getPerson(personId);
-        ArrayList<Comment> comments=p.getComments();
-        c.setDate(new Date());
-        comments.add(c);
-        p.setComments(comments);
-    }
 }

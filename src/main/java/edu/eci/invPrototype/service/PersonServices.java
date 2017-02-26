@@ -15,8 +15,4 @@ public interface PersonServices {
     public List<Person> getPersons();
     public void updatePerson(Person p);
     public Person getPerson(Integer pId);
-    public List<Diagnostic> getPersonDiagnostics(Integer personId);
-    public void postPersonDiagnostics(Integer personId, Diagnostic d);
-    public List<Comment> getPersonComments(Integer personId);
-    public void postPersonComment(Integer personId, Comment c);
 }

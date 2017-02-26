@@ -9,13 +9,13 @@ angular.module('myApp.ControlView', ['ngRoute'])
   });
 }])
 
-.controller('ControlViewCtrl', ['$rootScope', '$scope', 'diagnostics', function ($rootScope, $scope, diagnostics) {
-    $rootScope.person.id
-    diagnostics.get({personId:""+1234})
+.controller('ControlViewCtrl', ['$rootScope', '$scope', 'person', function ($rootScope, $scope, person) {
+    person.get({personId:""+$rootScope.idPerson})
     .$promise.then(
             //success
             function( value ){
-                $scope.diagnostics=value;
+                $scope.person=value;
+                $scope.diagnostics=$scope.person.diagnostics;
                 console.info(value);
             },
             //error

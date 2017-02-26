@@ -32,28 +32,6 @@ public class PersonController {
         return new ResponseEntity<>(ps.getPerson(personId), HttpStatus.ACCEPTED);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/{personId}/diagnostic")
-    public ResponseEntity<?> getPersonDiagnostics(@PathVariable Integer personId) {
-        return new ResponseEntity<>(ps.getPersonDiagnostics(personId), HttpStatus.ACCEPTED);
-    }
-
-    @RequestMapping(method = RequestMethod.POST, path = "/{personId}/diagnostic")
-    public ResponseEntity<?> postPersonDiagnostics(@PathVariable Integer personId, @RequestBody Diagnostic d) {
-        ps.postPersonDiagnostics(personId, d);
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
-    }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/{personId}/comment")
-    public ResponseEntity<?> getPersonComments(@PathVariable Integer personId) {
-        return new ResponseEntity<>(ps.getPersonComments(personId), HttpStatus.ACCEPTED);
-    }
-
-    @RequestMapping(method = RequestMethod.POST, path = "/{personId}/comment")
-    public ResponseEntity<?> postPersonComment(@PathVariable Integer personId, @RequestBody Comment c) {
-        ps.postPersonComment(personId, c);
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
-    }
-
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> postPerson(@RequestBody Person p) {
         ps.savePerson(p);

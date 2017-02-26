@@ -9,7 +9,8 @@ angular.module('myApp.CommentsView', ['ngRoute'])
   });
 }])
 
-.controller('CommentsViewCtrl', ['$rootScope', '$scope', 'comments', function ($rootScope, $scope, comments) {
+.controller('CommentsViewCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
     //$rootScope.person.id;
     $scope.commentsP=$rootScope.comments;
+
 }]);
