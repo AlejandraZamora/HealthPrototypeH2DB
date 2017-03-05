@@ -24,7 +24,7 @@ angular.module('myApp.PatientRegister', ['ngRoute'])
             persons.save($scope.person,function(){
                 console.info("Person saved   "+ $rootScope.person.name);
             });
-            $location.path("PatientView");
+            $location.path("HomePatient");
 
         };
 

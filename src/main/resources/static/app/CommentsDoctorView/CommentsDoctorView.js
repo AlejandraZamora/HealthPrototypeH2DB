@@ -1,17 +1,17 @@
 'use strict';
 
-angular.module('myApp.CommentsView', ['ngRoute'])
+angular.module('myApp.CommentsDoctorView', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/CommentsView', {
-    templateUrl: 'CommentsView/CommentsView.html',
-    controller: 'CommentsViewCtrl'
+  $routeProvider.when('/CommentsDoctorView', {
+    templateUrl: 'CommentsDoctorView/CommentsDoctorView.html',
+    controller: 'CommentsDoctorViewCtrl'
   });
 }])
 
-.controller('CommentsViewCtrl', ['$rootScope', '$scope', 'person', function ($rootScope, $scope, person) {
-
-     person.get({personId:""+$rootScope.idPerson})
+.controller('CommentsDoctorViewCtrl', ['$rootScope', '$scope', 'person', function ($rootScope, $scope, person) {
+     $scope.foundCD=$rootScope.FindID;
+     person.get({personId:""+$rootScope.patientId})
                 .$promise.then(
                         //success
                         function( value ){
@@ -19,7 +19,7 @@ angular.module('myApp.CommentsView', ['ngRoute'])
                             $scope.comments=$scope.personC.comments;
                             if (typeof $scope.comments == "undefined"){
                                 $scope.commentsY=false;
-                                $scope.recomendaciones="No tienes ninguna recomendación";
+                                $scope.recomendaciones="No tiene ninguna recomendación";
                             }
                             if(typeof $scope.comments != "undefined"){
                                 $scope.commentsY=true;
@@ -27,7 +27,7 @@ angular.module('myApp.CommentsView', ['ngRoute'])
                         },
                         //error
                         function( error ){
-                            alert("El paciente no se encuentra registrado");
+                            console.log("El paciente no se encuentra registrado");
                         }
                 );
 

@@ -20,7 +20,7 @@ angular.module('myApp.LoginView', ['ngRoute'])
                         function( value ){
                             $rootScope.person=value;
                             $rootScope.idPerson=$scope.personId;
-                            $location.path("PatientView");
+                            $location.path("HomePatient");
                         },
                         //error
                         function( error ){

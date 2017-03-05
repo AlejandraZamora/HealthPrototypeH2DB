@@ -13,7 +13,8 @@ angular.module('myApp.CommentRegister', ['ngRoute'])
         $scope.title=null;
         $scope.description=null;
         $scope.date=new Date();
-        $scope.pId=$rootScope.pId;
+        $scope.pId=$rootScope.patientId;
+        $scope.foundC=$rootScope.FindID;
         $scope.saveComment= function(){
             $scope.comment={"date":$scope.date,"description":$scope.description,"title":$scope.title};
             person.get({personId:""+$scope.pId})
@@ -27,6 +28,7 @@ angular.module('myApp.CommentRegister', ['ngRoute'])
                             //success
                             function(value){
                                 console.log("Patient update"+ $scope.person.comments);
+                                $location.path("CommentsDoctorView");
                             },
                             //error
                             function( error ){
@@ -40,6 +42,5 @@ angular.module('myApp.CommentRegister', ['ngRoute'])
                         alert("El paciente no se encuentra registrado");
                     }
             );
-            $location.path("DoctorView");
         };
 }]);

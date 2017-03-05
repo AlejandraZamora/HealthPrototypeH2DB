@@ -1,0 +1,74 @@
+<div ng-include="'/app/Templates/templateDoctor.html'"></div>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Consulta los datos de control de tus pacientes</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+        <div ng-hide="FindID">
+            <label> Número de identificación del paciente que deseas consultar</label>
+            <br><br>
+            <input type="number" ng-model="pId">
+            <br><br>
+
+            <button type="button" class="btn btn-success" ng-click="consultar()">Consultar Datos</button>
+            <br><br>
+        </div>
+        <div ng-show="FindID">
+            <button type="button" class="btn btn-success" ng-click="NuevaConsulta()">Nueva Consulta</button>
+            <br><br>
+        </div>
+    </div>
+
+    <div class="row" ng-show="FindID">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Datos personales del paciente {{person.name}} {{person.firstName}}
+                </div>
+                <div class="panel-body">
+                    <h2> Número de Identificación
+                        <br><br>
+                        <small> {{person.id}} </small>
+                    </h2>
+                    <br><br>
+
+                    <h2> Nombre
+                        <br><br>
+                        <small> {{person.firstName}} </small>
+                    </h2>
+                    <br><br>
+
+                    <h2> Apellido
+                        <br><br>
+                        <small> {{person.name}} </small>
+                    </h2>
+                    <br><br>
+
+                    <h2> Dirección
+                        <br><br>
+                        <small> {{person.address.street}} </small>
+                    </h2>
+                    <br><br>
+
+                    <h2> Código Postal
+                        <br><br>
+                        <small> {{person.address.zip}} </small>
+                    </h2>
+                    <br><br>
+
+                    <h2> Ciudad
+                        <br><br>
+                        <small> {{person.address.city}} </small>
+                    </h2>
+                    <br><br>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->

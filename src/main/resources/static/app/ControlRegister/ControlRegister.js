@@ -42,6 +42,6 @@ angular.module('myApp.ControlRegister', ['ngRoute'])
                         alert("El paciente no se encuentra registrado");
                     }
             );
-            $location.path("PatientView");
+            $location.path("HomePatient");
         };
 }]);

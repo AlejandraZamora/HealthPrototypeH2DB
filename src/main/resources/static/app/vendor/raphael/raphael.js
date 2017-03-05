@@ -420,7 +420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Raphael.fn
 	     [ property (object) ]
 	     **
-	     * You can add your own method to the canvas. For example if you want to draw a pie chart,
+             * You can add your own method to the canvas. For example if you want to draw a pie chart,
 	     * you can create your own pie chart function and ship it as a Raphaël plugin. To do this
 	     * you need to extend the `Raphael.fn` object. You should modify the `fn` object before a
 	     * Raphaël instance is created, otherwise it will take no effect. Please note that the
