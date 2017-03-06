@@ -45,11 +45,11 @@ deploy:
 - provider: releases
   api_key: $GITHUB_AUTH_TOKEN
   file:
-  - "./dist/Chart.bundle.chart"
-  - "./dist/Chart.bundle.min.chart"
-  - "./dist/Chart.chart"
-  - "./dist/Chart.min.chart"
-  - "./dist/Chart.chart.zip"
+  - "./dist/Chart.bundle.angular-chart"
+  - "./dist/Chart.bundle.min.angular-chart"
+  - "./dist/Chart.angular-chart"
+  - "./dist/Chart.min.angular-chart"
+  - "./dist/Chart.angular-chart.zip"
   skip_cleanup: true
   on:
     tags: true
