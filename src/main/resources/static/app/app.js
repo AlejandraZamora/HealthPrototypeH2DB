@@ -12,7 +12,9 @@ angular.module('myApp', [
   'myApp.HomeDoctor',
   'myApp.templatePatient',
   'myApp.templateDoctor',
-  'myApp.InvestigatorView',
+  'myApp.templateInvestigator',
+  'myApp.HomeInvestigator',
+  'myApp.RegistersInvestigatorView',
   'myApp.ControlView',
   'myApp.ControlRegister',
   'myApp.CommentsView',
@@ -22,7 +24,8 @@ angular.module('myApp', [
   'myApp.LoginView',
   'myApp.PatientChoiceView',
   'myApp.version',
-  'services.factory'
+  'services.factory',
+  'chart.js'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

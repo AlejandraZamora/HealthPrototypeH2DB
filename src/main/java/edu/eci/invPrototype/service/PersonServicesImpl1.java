@@ -37,11 +37,23 @@ public class PersonServicesImpl1 implements PersonServices{
         personList.add(p);
         Person p1=new Person(2, "Andrea","Gomez",new Address("Calle 12","55521","Bogota"));
         p1.setComments(cs);
-        p1.setDiagnostics(ds);
+        Diagnostic d11=new Diagnostic(67,89,156,456,new Date());
+        Diagnostic d22=new Diagnostic(809,122,234,47,new Date());
+        Diagnostic d33=new Diagnostic(135,567,23,98,new Date());
+        Diagnostic d44=new Diagnostic(165,673,88,667, new Date());
+        ArrayList<Diagnostic> ds1=new ArrayList<Diagnostic>();
+        ds1.add(d11);ds1.add(d22);ds1.add(d33);ds1.add(d44);
+        p1.setDiagnostics(ds1);
         personList.add(p1);
         Person p2=new Person(3, "Felipe","Sanchez",new Address("Calle 12","55521","Bogota"));
         p2.setComments(cs);
-        p2.setDiagnostics(ds);
+        Diagnostic d01=new Diagnostic(76,889,55,12,new Date());
+        Diagnostic d02=new Diagnostic(90,132,56,98,new Date());
+        Diagnostic d03=new Diagnostic(189,261,76,98,new Date());
+        Diagnostic d04=new Diagnostic(450,13,55,69, new Date());
+        ArrayList<Diagnostic> ds2=new ArrayList<Diagnostic>();
+        ds2.add(d01);ds2.add(d02);ds2.add(d03);ds2.add(d04);
+        p2.setDiagnostics(ds2);
         personList.add(p2);
     }
 

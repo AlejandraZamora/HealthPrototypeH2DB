@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-chart lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-chart lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-chart lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
 
@@ -27,8 +27,8 @@
   <link href="/app/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="/app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!-- HTML5 Shim and Respond.chart IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.chart doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -43,11 +43,13 @@
   <div>Cliente Multiple app: v<span app-version></span></div>
 
   <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.chart"></script>
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/chart/dist/Chart.min.js"></script>
+  <script src="bower_components/angular-chart/dist/angular-chart.min.js"></script>
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="PatientAutorization/PatientAutorization.js"></script>
@@ -58,7 +60,9 @@
   <script src="HomeDoctor/HomeDoctor.js"></script>
   <script src="Templates/templatePatient.js"></script>
   <script src="Templates/templateDoctor.js"></script>
-  <script src="InvestigatorView/InvestigatorView.js"></script>
+  <script src="Templates/templateInvestigator.js"></script>
+  <script src="HomeInvestigator/HomeInvestigator.js"></script>
+  <script src="RegistersInvestigatorView/RegistersInvestigatorView.js"></script>
   <script src="ControlView/ControlView.js"></script>
   <script src="ControlRegister/ControlRegister.js"></script>
   <script src="CommentsView/CommentsView.js"></script>

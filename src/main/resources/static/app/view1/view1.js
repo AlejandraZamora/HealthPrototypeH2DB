@@ -17,6 +17,6 @@ angular.module('myApp.view1', ['ngRoute'])
               $location.path("HomeDoctor");
      }
      $scope.continueI=function(){
-              $location.path("InvestigatorView");
+              $location.path("HomeInvestigator");
      }
 }]);
