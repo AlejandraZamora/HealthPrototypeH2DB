@@ -69,8 +69,7 @@ public class PersonServicesImpl1 implements PersonServices{
 
     @Override
     public void updatePerson(Person p) {
-        for (Person pe :
-                personList) {
+        for (Person pe : personList) {
             if (p.getId()==pe.getId()) {
                 personList.remove(personList.indexOf(pe));
                 personList.add(p);

@@ -10,9 +10,7 @@ angular.module('myApp.UpdatePatient', ['ngRoute'])
 }])
 
 .controller('UpdatePatientCtrl', ['$rootScope', '$scope','person', 'persons','$http','$resource', '$location', function ($rootScope, $scope, person, persons, $http, $resource, $location) {
-        $scope.id=null;
-        $scope.name=null;
-        $scope.lastName=null;
+
         $scope.address=null;
         $scope.zip=null;
         $scope.city=null;
@@ -25,13 +23,13 @@ angular.module('myApp.UpdatePatient', ['ngRoute'])
                             function( value ){
                                 $scope.personT=value;
                                 if($scope.address!=null){
-                                    $scope.personT.address=$scope.address;
+                                    $scope.personT.address.street=$scope.address;
                                 }
                                 if($scope.zip!=null){
-                                    $scope.personT.zip=$scope.zip;
+                                    $scope.personT.address.zip=$scope.zip;
                                 }
                                 if($scope.city!=null){
-                                    $scope.personT.city=$scope.city;
+                                    $scope.personT.address.city=$scope.city;
                                 }
                                 persons.update($scope.personT)
                                 .$promise.then(
@@ -51,7 +49,7 @@ angular.module('myApp.UpdatePatient', ['ngRoute'])
                                 alert("El paciente no se encuentra registrado");
                             }
                     );
-            $location.path("PatientProfile");
+            $location.path("HomePatient");
 
         };
 
