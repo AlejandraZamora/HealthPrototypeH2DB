@@ -22,6 +22,7 @@ angular.module('myApp.RegistersInvestigatorView', ['ngRoute'])
                     $scope.labels=[];
                     $scope.diagnostics=[];
                     $scope.series = ['Datos de Control del estudio'];
+                    $scope.personAndDiagnostic=[];
                     for (var i = 0; i < $scope.personsList.length; i++) {
                         if($scope.personsList[i].diagnostics.length >= 1){
                             $scope.personAct=$scope.personsList[i];
@@ -36,6 +37,8 @@ angular.module('myApp.RegistersInvestigatorView', ['ngRoute'])
                                 disP=disP+dd.diastolicPressure;
                                 chol=chol+dd.bloodCholesterol;
                                 cRyt=cRyt+dd.heartRate;
+                                $scope.personAndDiagnostic.push([$scope.personAct.id, $scope.personAct.fullName, dd.date, dd.systolicPressure, dd.diastolicPressure, dd.bloodCholesterol, dd.heartRate]);
+
                             }
                             $scope.sisPressure.push(sisP/$scope.personAct.diagnostics.length);
                             $scope.disPressure.push(disP/$scope.personAct.diagnostics.length);
