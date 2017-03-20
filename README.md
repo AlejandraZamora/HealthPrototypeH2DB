@@ -3,7 +3,7 @@ ___
 
 ## Diseño e implementación de una plataforma genérica para el desarrollo de aplicaciones de e-Health y m-Health 
 
-## fHealth API REST
+## API REST
 
 Tipo de datos manejado:  ***JSON***
 
@@ -19,7 +19,7 @@ Este se pueden usar así:
 
 | Recurso | Metodo | Descripción | Parametro | Retorno |
 | :------ | :----- | :---------- | :-------- | :------ |
-| `/person/` | **GET** | Retorna todas las personas o pacientes registradas. | | **List<DataPOJO>** |
+| `/person/` | **GET** | Retorna todas las personas o pacientes registradas. | | **List****<DataPOJO>** |
 | `/person/` | **POST** | Guarda una persona o paciente nuevo. | **DataPOJO** | |
 | `/person/` | **PUT** | Actualiza la información de una persona o paciente registrado. | **DataPOJO** | |
 | `/person/{personId}/` | **GET** | Retorna el recurso de persona o paciente específicado por el id| **Integer** | **DataPOJO** |
@@ -46,29 +46,29 @@ Este se pueden usar así:
   
 #### Address
   
-  {
-    "street":String,
-    "city":String,
-    "zip":String
-  }
+  	{
+    		"street":String,
+    		"city":String,
+    		"zip":String
+  	}
 
 #### Diagnostic
   
-  {
-    "systolicPressure":Integer,
-    "diastolicPressure":Integer,
-    "bloodCholesterol":Integer,
-    "heartRate":Integer,
-    "date":Date
-  }
+  	{
+    		"systolicPressure":Integer,
+    		"diastolicPressure":Integer,
+    		"bloodCholesterol":Integer,
+    		"heartRate":Integer,
+    		"date":Date
+  	}
   
 #### Comment
 
-  {
-    "date":Date,
-    "description":String,
-    "title":String
-  }
+  	{
+    		"date":Date,
+    		"description":String,
+    		"title":String
+  	}
 
 _______
 
