@@ -19,7 +19,7 @@ Este se pueden usar así:
 
 | Recurso | Metodo | Descripción | Parametro | Retorno |
 | :------ | :----- | :---------- | :-------- | :------ |
-| `/person/` | **GET** | Retorna todas las personas o pacientes registradas. | | **List****<DataPOJO>** |
+| `/person/` | **GET** | Retorna todas las personas o pacientes registradas. | | **List \<DataPOJO>** |
 | `/person/` | **POST** | Guarda una persona o paciente nuevo. | **DataPOJO** | |
 | `/person/` | **PUT** | Actualiza la información de una persona o paciente registrado. | **DataPOJO** | |
 | `/person/{personId}/` | **GET** | Retorna el recurso de persona o paciente específicado por el id| **Integer** | **DataPOJO** |
