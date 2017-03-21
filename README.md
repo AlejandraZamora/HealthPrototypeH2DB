@@ -36,12 +36,13 @@ Este se pueden usar así:
 #### Person
 
 	{	
-		"patientName":String,
-		"patientLastName":String,
-		"gameName":String,
-		"levelReached":Integer,
-		"regDate":Date,
-		"timeSpendMilisenconds":Long
+		"comments":List<Comment>,
+		"id":Integer,
+		"name":String,
+		"firstName":String,
+		"address":Address,
+		"diagnostics":List<Diagnostic>,
+		"fullName":String
 	}
   
 ##### Address
