@@ -1,18 +1,19 @@
 package edu.eci.invPrototype.model;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by alejandra on 26/02/17.
  */
 public class Comment {
-    private Date date;
+    private GregorianCalendar date;
     private String description;
     private String title;
 
     public Comment(){}
 
-    public Comment(Date date, String description, String title) {
+    public Comment(GregorianCalendar date, String description, String title) {
         this.date = date;
         this.description = description;
         this.title = title;
@@ -31,11 +32,11 @@ public class Comment {
         this.title = title;
     }
 
-    public Date getDate() {
+    public GregorianCalendar getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(GregorianCalendar date) {
         this.date = date;
     }
 

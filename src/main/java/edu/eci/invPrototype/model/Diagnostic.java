@@ -1,6 +1,7 @@
 package edu.eci.invPrototype.model;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by andre on 25/02/2017.
@@ -14,9 +15,9 @@ public class Diagnostic {
     private Integer diastolicPressure;
     private Integer bloodCholesterol;
     private Integer heartRate;
-    private Date date;
+    private GregorianCalendar date;
 
-    public Diagnostic(Integer systolicPressure, Integer diastolicPressure, Integer bloodCholesterol, Integer heartRate, Date date) {
+    public Diagnostic(Integer systolicPressure, Integer diastolicPressure, Integer bloodCholesterol, Integer heartRate, GregorianCalendar date) {
         this.systolicPressure = systolicPressure;
         this.diastolicPressure = diastolicPressure;
         this.bloodCholesterol = bloodCholesterol;
@@ -56,11 +57,11 @@ public class Diagnostic {
         this.heartRate = heartRate;
     }
 
-    public Date getDate() {
+    public GregorianCalendar getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(GregorianCalendar date) {
         this.date = date;
     }
 }

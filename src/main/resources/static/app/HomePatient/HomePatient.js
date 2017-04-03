@@ -32,18 +32,22 @@ angular.module('myApp.HomePatient', ['ngRoute'])
                         $scope.cardiacRythm=[];
                         $scope.labels=[];
                         $scope.series = ['Datos de Control'];
+                        $scope.diagnosticsH.orderByDate("date", -1);
+                        $scope.currentDate=new Date();
                         for(var n=0; n<$scope.diagnosticsH.length; n++){
                             var dd=$scope.diagnosticsH[n];
-                            $scope.sisPressure.push(dd.systolicPressure);
-                            $scope.disPressure.push(dd.diastolicPressure);
-                            $scope.cholesterol.push(dd.bloodCholesterol);
-                            $scope.cardiacRythm.push(dd.heartRate);
                             var datee=new Date(dd.date);
-                            var dia = datee.getDate();
-                            var mes = parseInt(datee.getMonth()) + 1;
-                            var year = datee.getFullYear();
-                            var dated=dia+"/"+mes+"/"+year;
-                            $scope.labels.push(dated);
+                            if(datee >= ($scope.currentDate.setDate($scope.currentDate.getDate()-14))){
+                                $scope.sisPressure.push(dd.systolicPressure);
+                                $scope.disPressure.push(dd.diastolicPressure);
+                                $scope.cholesterol.push(dd.bloodCholesterol);
+                                $scope.cardiacRythm.push(dd.heartRate);
+                                var dia = datee.getDate();
+                                var mes = parseInt(datee.getMonth()) + 1;
+                                var year = datee.getFullYear();
+                                var dated=dia+"/"+mes+"/"+year;
+                                $scope.labels.push(dated);
+                            }else{ break;}
                         }
                     },
                     //error
@@ -53,5 +57,12 @@ angular.module('myApp.HomePatient', ['ngRoute'])
             );
       $scope.continueCS=function(){
               $location.path("CommentsView");
+          };
+      Array.prototype.orderByDate=function(p,so){
+            if(so!=-1&&so!=1)so=1;
+            this.sort(function(a,b){
+              var da=new Date(a[p]),db=new Date(b[p]);
+              return(da-db)*so;
+            })
           };
 }]);

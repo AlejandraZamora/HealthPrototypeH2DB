@@ -22,13 +22,26 @@ angular.module('myApp', [
   'myApp.CommentsDoctorView',
   'myApp.RegisterDoctorView',
   'myApp.LoginView',
+  'myApp.Login',
   'myApp.PatientChoiceView',
   'myApp.version',
   'services.factory',
   'chart.js'
 ]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+config(['$locationProvider', '$routeProvider','$httpProvider', function($locationProvider, $routeProvider, $httpProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/Login'});
+  $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+}])
+.controller('general', ['$scope', '$rootScope',  '$http', '$location', function($scope,$rootScope,$http,$location ){
+    $scope.logout = function () {
+        $http.post('/logout', {}).then(function () {
+            $rootScope.authenticated = false;
+            $location.path("/");
+        },function (data) {
+            $rootScope.authenticated = false;
+        });
+    };
 }]);

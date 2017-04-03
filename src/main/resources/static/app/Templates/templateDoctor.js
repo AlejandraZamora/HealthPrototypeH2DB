@@ -4,9 +4,6 @@ angular.module('myApp.templateDoctor', ['ngRoute'])
 
 .controller('templateDoctorCtrl', ['$rootScope', '$scope', 'person', '$location', function ($rootScope, $scope, person,$location) {
 
-      $scope.continueLogoutD=function(){
-            $location.path("view1");
-      };
       $scope.continueHomeD=function(){
             $location.path("HomeDoctor");
       };

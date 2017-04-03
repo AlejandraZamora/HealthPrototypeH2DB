@@ -12,12 +12,19 @@ public class Person {
 
     }
 
-    public Person(Integer id, String name, String firstName, Address address) {
+    public Person(Integer id, String name, String firstName, Address address, String role) {
         this.id = id;
         this.name = name;
         this.firstName = firstName;
         this.address = address;
+        this.role=role;
     }
+
+    private String role;
+
+    public String getRole() { return role; }
+
+    public void setRole(String role) { this.role = role; }
 
     private ArrayList<Comment> comments;
 

@@ -7,9 +7,6 @@ angular.module('myApp.templatePatient', ['ngRoute'])
       $scope.continuePerfil=function(){
             $location.path("PatientProfile");
       };
-      $scope.continueLogout=function(){
-            $location.path("view1");
-      };
       $scope.continueHome=function(){
             $location.path("HomePatient");
       };

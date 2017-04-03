@@ -14,6 +14,9 @@
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
+                    <label>Filtrar por:  </label>
+                    <input type="text" ng-model="busqueda">
+                    <br><br>
                     <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                         <tr>
@@ -25,7 +28,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="d in diagnostics" >
+                        <tr ng-repeat="d in diagnosticsNew | filter:busqueda" >
                             <td>{{d.date | date:"dd/MMMM/yyyy"}}</td>
                             <td>{{d.systolicPressure}}</td>
                             <td>{{d.diastolicPressure}}</td>
