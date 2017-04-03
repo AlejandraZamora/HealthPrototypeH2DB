@@ -36,6 +36,7 @@ Este se pueden usar así:
 #### Person
 
 	{	
+		"role":String,
 		"comments":List<Comment>,
 		"id":Integer,
 		"name":String,
