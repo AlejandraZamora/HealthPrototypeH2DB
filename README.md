@@ -22,14 +22,14 @@ Este se pueden usar así:
 | `/person/` | **GET** | Retorna todas las personas o pacientes registradas. | | **List \<DataPOJO>** |
 | `/person/` | **POST** | Guarda una persona o paciente nuevo. | **DataPOJO** | |
 | `/person/` | **PUT** | Actualiza la información de una persona o paciente registrado. | **DataPOJO** | |
-| `/person/{personId}/` | **GET** | Retorna el recurso de persona o paciente específicado por el id| **Integer** | **DataPOJO** |
+| `/person/{personId}/` | **GET** | Retorna el recurso de persona o paciente específicado por el id| **Long** | **DataPOJO** |
 
 
 ### Parametros de URL
 
 | Nombre | Tipo | Descripción |
 | :----- | :--- | :---------- |
-| *personId* | **Integer**| Número de identificación de la persona o paciente. |
+| *personId* | **Long**| Número de identificación de la persona o paciente. |
 
 ### Forma de datos
 
@@ -38,7 +38,7 @@ Este se pueden usar así:
 	{	
 		"role":String,
 		"comments":List<Comment>,
-		"id":Integer,
+		"id":Long,
 		"name":String,
 		"firstName":String,
 		"address":Address,
@@ -57,6 +57,7 @@ Este se pueden usar así:
 #### Diagnostic
   
   	{
+		"diagnosticId":Long,
     		"systolicPressure":Integer,
     		"diastolicPressure":Integer,
     		"bloodCholesterol":Integer,
@@ -67,6 +68,7 @@ Este se pueden usar así:
 #### Comment
 
   	{
+		"commentId":Long,
     		"date":Date,
     		"description":String,
     		"title":String
