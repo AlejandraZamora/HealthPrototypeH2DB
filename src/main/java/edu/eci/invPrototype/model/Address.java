@@ -1,8 +1,13 @@
 package edu.eci.invPrototype.model;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+
 /**
  * Created by Andrés Felipe on 12/02/2017.
  */
+@Embeddable
 public class Address {
     public Address(){
 
@@ -12,6 +17,8 @@ public class Address {
         this.city=city;
         this.zip=zip;
     }
+
+    @Column(name = "street")
     private String street;
 
     public String getStreet() {
@@ -22,6 +29,7 @@ public class Address {
         this.street = street;
     }
 
+    @Column(name="zip")
     private String zip;
 
     public String getZip() {
@@ -32,6 +40,7 @@ public class Address {
         this.zip = zip;
     }
 
+    @Column(name = "city")
     private String city;
 
     public String getCity() {

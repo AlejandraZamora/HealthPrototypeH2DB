@@ -3,16 +3,21 @@ package edu.eci.invPrototype.model;
 /**
  * Created by Andrés Felipe on 12/02/2017.
  */
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @SuppressWarnings("all")
+
+@Entity
+@Table(name = "persons", schema = "application")
 public class Person {
     public Person(){
 
     }
 
-    public Person(Integer id, String name, String firstName, Address address, String role) {
+    public Person(Long id, String name, String firstName, Address address, String role) {
         this.id = id;
         this.name = name;
         this.firstName = firstName;
@@ -20,32 +25,41 @@ public class Person {
         this.role=role;
     }
 
+    @Column(name="role")
     private String role;
 
     public String getRole() { return role; }
 
     public void setRole(String role) { this.role = role; }
 
-    private ArrayList<Comment> comments;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumns(
+            {
+                    @JoinColumn(name = "comment",referencedColumnName = "id", nullable = false),
+            }
+    )
+    private Set<Comment> comments;
 
-    public ArrayList<Comment> getComments() {
+    public Set<Comment> getComments() {
         return comments;
     }
 
-    public void setComments(ArrayList<Comment> comments) {
+    public void setComments(Set<Comment> comments) {
         this.comments = comments;
     }
 
-    private Integer id;
+    @Id
+    private Long id;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
+    @Column(name = "name")
     private String name;
 
     public String getName() {
@@ -56,6 +70,7 @@ public class Person {
         this.name = name;
     }
 
+    @Column(name = "first_name")
     private String firstName;
 
     public String getFirstName() {
@@ -66,16 +81,7 @@ public class Person {
         this.firstName = firstName;
     }
 
-    private List<Person> friends;
-
-    public List<Person> getFriends() {
-        return this.friends;
-    }
-
-    public void setFriends(final List<Person> friends) {
-        this.friends = friends;
-    }
-
+    @Embedded
     private Address address;
 
     public Address getAddress() {
@@ -90,13 +96,19 @@ public class Person {
         return ((this.firstName + " ") + this.name);
     }
 
-    private ArrayList<Diagnostic> diagnostics;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumns(
+            {
+                    @JoinColumn(name = "diagnostic",referencedColumnName = "id", nullable = false),
+            }
+    )
+    private Set<Diagnostic> diagnostics;
 
-    public ArrayList<Diagnostic> getDiagnostics() {
+    public Set<Diagnostic> getDiagnostics() {
         return diagnostics;
     }
 
-    public void setDiagnostics(ArrayList<Diagnostic> diagnostics) {
+    public void setDiagnostics(Set<Diagnostic> diagnostics) {
         this.diagnostics = diagnostics;
     }
 }
