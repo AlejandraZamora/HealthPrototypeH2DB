@@ -18,7 +18,7 @@ angular.module('myApp.ControlRegister', ['ngRoute'])
 
         $scope.saveRegister= function(){
             $scope.diagnostic={"systolicPressure":$scope.siPresuare,"diastolicPressure":$scope.diPresuare,"bloodCholesterol":$scope.cholesterol,"heartRate":$scope.cardiacRythm,"date":$scope.date};
-            person.get({personId:""+$rootScope.idPerson})
+            person.get({personId:""+$rootScope.RegisteredIdPerson})
             .$promise.then(
                     //success
                     function( value ){
@@ -39,7 +39,7 @@ angular.module('myApp.ControlRegister', ['ngRoute'])
                     },
                     //error
                     function( error ){
-                        alert("El paciente no se encuentra registrado");
+                        console.log("El paciente no se encuentra registrado");
                     }
             );
             $location.path("HomePatient");

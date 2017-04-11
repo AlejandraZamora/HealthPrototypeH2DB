@@ -17,6 +17,7 @@ public class Diagnostic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "diagnostic_id")
     private Long diagnosticId;
     @Column(name = "systolic_pressure")
     private Integer systolicPressure;

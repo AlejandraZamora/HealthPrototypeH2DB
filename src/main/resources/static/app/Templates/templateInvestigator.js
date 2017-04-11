@@ -10,4 +10,7 @@ angular.module('myApp.templateInvestigator', ['ngRoute'])
       $scope.continueRegistersI=function(){
             $location.path("RegistersInvestigatorView");
       };
+      $scope.continueDoctorProfile=function(){
+            $location.path("InvestigatorProfile");
+      };
 }]);

@@ -17,8 +17,9 @@ public class Person {
 
     }
 
-    public Person(Long id, String name, String firstName, Address address, String role) {
+    public Person(Long id, String password, String name, String firstName, Address address, String role) {
         this.id = id;
+        this.password=password;
         this.name = name;
         this.firstName = firstName;
         this.address = address;
@@ -49,6 +50,7 @@ public class Person {
     }
 
     @Id
+    @Column(name = "id")
     private Long id;
 
     public Long getId() {
@@ -57,6 +59,17 @@ public class Person {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Column(name = "password")
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Column(name = "name")
@@ -111,4 +124,6 @@ public class Person {
     public void setDiagnostics(Set<Diagnostic> diagnostics) {
         this.diagnostics = diagnostics;
     }
+
+
 }

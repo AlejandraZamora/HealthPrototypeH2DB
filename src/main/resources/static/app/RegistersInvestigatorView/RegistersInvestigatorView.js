@@ -66,7 +66,7 @@ angular.module('myApp.RegistersInvestigatorView', ['ngRoute'])
                 },
                 //error
                 function( error ){
-                    alert("El paciente no se encuentra registrado");
+                    console.log("El paciente no se encuentra registrado");
                 }
         );
 }]);

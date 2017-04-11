@@ -11,7 +11,7 @@ angular.module('myApp.CommentsView', ['ngRoute'])
 
 .controller('CommentsViewCtrl', ['$rootScope', '$scope', 'person', function ($rootScope, $scope, person) {
 
-     person.get({personId:""+$rootScope.idPerson})
+     person.get({personId:""+$rootScope.RegisteredIdPerson})
                 .$promise.then(
                         //success
                         function( value ){
@@ -38,7 +38,7 @@ angular.module('myApp.CommentsView', ['ngRoute'])
                         },
                         //error
                         function( error ){
-                            alert("El paciente no se encuentra registrado");
+                           console.log("El paciente no se encuentra registrado");
                         }
                 );
 

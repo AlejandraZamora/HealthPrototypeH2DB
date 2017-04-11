@@ -17,35 +17,47 @@
                                 <form role="form">
                                     <div class="form-group">
 
-                                        <label> Número de identificación </label>
+                                        <h2>Número de identificación
+                                            <small>Tú número de identificación será tu usuario de acceso</small>
+                                        </h2>
                                         <br><br>
                                         <input type="number" ng-model="id">
                                         <br><br>
 
-                                        <label> Nombre </label>
+                                        <h2> Contraseña </h2>
+                                        <input type="password" ng-model="password">
+
+                                        <h2> Nombre </h2>
                                         <br><br>
                                         <input type="text" ng-model="name">
                                         <br><br>
 
-                                        <label> Apellido </label>
+                                        <h2> Apellido </h2>
                                         <br><br>
                                         <input type="text" ng-model="lastName">
                                         <br><br>
 
-                                        <label> Dirección </label>
+                                        <h2> Dirección </h2>
                                         <br><br>
                                         <input type="text" ng-model="address">
                                         <br><br>
 
-                                        <label> Código Postal </label>
+                                        <h2> Código Postal </h2>
                                         <br><br>
                                         <input type="number" ng-model="zip">
                                         <br><br>
 
-                                        <label> Ciudad </label>
+                                        <h2> Ciudad </h2>
                                         <br><br>
                                         <input type="text" ng-model="city">
                                         <br><br>
+
+                                        <h2> Rol </h2>
+                                        <select name="rol" id="roleS">
+                                            <option value="1">Paciente</option>
+                                            <option value="2">Doctor</option>
+                                            <option value="3">Investigador</option>
+                                        </select>
                                     </div>
                                     <button type="submit" class="btn btn-default" ng-click="savePerson()">Aceptar</button>
                                     <button type="reset" class="btn btn-default">Reiniciar</button>

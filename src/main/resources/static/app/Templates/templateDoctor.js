@@ -16,4 +16,7 @@ angular.module('myApp.templateDoctor', ['ngRoute'])
       $scope.continueCommentView=function(){
             $location.path("CommentsDoctorView");
       };
+      $scope.continueDoctorProfile=function(){
+            $location.path("DoctorProfile");
+      };
 }]);

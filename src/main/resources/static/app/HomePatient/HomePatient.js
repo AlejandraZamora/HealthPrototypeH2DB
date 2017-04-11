@@ -11,7 +11,7 @@ angular.module('myApp.HomePatient', ['ngRoute'])
 
 .controller('HomePatientCtrl', ['$rootScope', '$scope', 'person', '$location', function ($rootScope, $scope, person,$location) {
 
-      person.get({personId:""+$rootScope.idPerson})
+      person.get({personId:""+$rootScope.RegisteredIdPerson})
             .$promise.then(
                     //success
                     function( value ){
@@ -52,7 +52,7 @@ angular.module('myApp.HomePatient', ['ngRoute'])
                     },
                     //error
                     function( error ){
-                        alert("El paciente no se encuentra registrado");
+                        console.log("El paciente no se encuentra registrado");
                     }
             );
       $scope.continueCS=function(){

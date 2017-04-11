@@ -10,6 +10,9 @@ angular.module('myApp.Login', ['ngRoute'])
 }])
 
 .controller('LoginCtrl', ['$scope', '$rootScope',  '$http', '$location', function($scope,$rootScope,$http,$location ){
+    $scope.continueRegister=function(){
+            $location.path("Register");
+    }
     var authenticate = function (credentials, callback) {
 
              var headers = credentials ? {authorization: "Basic "
@@ -35,11 +38,12 @@ angular.module('myApp.Login', ['ngRoute'])
          $scope.login = function () {
              authenticate($scope.credentials, function () {
                  if ($rootScope.authenticated) {
-                     $location.path("/view1");
+                     $location.path("/Register");
                      $scope.error = false;
                  } else {
-                     $location.path("/LoginView");
+                     $location.path("/Login");
                      $scope.error = true;
+                     alert("Autenticación Fallida");
                  }
              });
     };

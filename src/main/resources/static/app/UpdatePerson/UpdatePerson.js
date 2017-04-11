@@ -1,27 +1,29 @@
 'use strict';
 
-angular.module('myApp.UpdatePatient', ['ngRoute'])
+angular.module('myApp.UpdatePerson', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/UpdatePatient', {
-    templateUrl: 'UpdatePatient/UpdatePatient.html',
-    controller: 'UpdatePatientCtrl'
+  $routeProvider.when('/UpdatePerson', {
+    templateUrl: 'UpdatePerson/UpdatePerson.html',
+    controller: 'UpdatePersonCtrl'
   });
 }])
 
-.controller('UpdatePatientCtrl', ['$rootScope', '$scope','person', 'persons','$http','$resource', '$location', function ($rootScope, $scope, person, persons, $http, $resource, $location) {
+.controller('UpdatePersonCtrl', ['$rootScope', '$scope','person', 'persons','$http','$resource', '$location', function ($rootScope, $scope, person, persons, $http, $resource, $location) {
 
         $scope.address=null;
         $scope.zip=null;
         $scope.city=null;
         $rootScope.nameP=null;
+        $scope.role=null;
 
         $scope.updatePerson= function(){
-            person.get({personId:""+$rootScope.idPerson})
+            person.get({personId:""+$rootScope.RegisteredIdPerson})
                     .$promise.then(
                             //success
                             function( value ){
                                 $scope.personT=value;
+                                $scope.role=$scope.personT.role;
                                 if($scope.address!=null){
                                     $scope.personT.address.street=$scope.address;
                                 }
@@ -35,22 +37,27 @@ angular.module('myApp.UpdatePatient', ['ngRoute'])
                                 .$promise.then(
                                     //success
                                     function(value){
-                                        console.log("Patient update"+ $scope.personT.diagnostics);
+                                        console.log("Person update"+ $scope.personT.diagnostics);
                                     },
                                     //error
                                     function( error ){
-                                        console.log("El paciente no se pudo actualizar");
+                                        console.log("El usuario no se pudo actualizar");
                                     }
 
                                 );
                             },
                             //error
                             function( error ){
-                                alert("El paciente no se encuentra registrado");
+                                console.log("El usuario no se encuentra registrado");
                             }
                     );
-            $location.path("HomePatient");
-
+            if($scope.role.equals("Paciente")){
+                $location.path("HomePatient");
+            }else if($scope.role.equals("Doctor")){
+                $location.path("HomeDoctor");
+            }else if($scope.role.equals("Investigador")){
+                $location.path("HomeInvestigator");
+            }
         };
 
 }]);

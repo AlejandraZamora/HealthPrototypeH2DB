@@ -3,12 +3,10 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
   'myApp.PatientProfile',
-  'myApp.UpdatePatient',
+  'myApp.UpdatePerson',
   'myApp.HomePatient',
-  'myApp.PatientAutorization',
-  'myApp.PatientRegister',
+  'myApp.Register',
   'myApp.HomeDoctor',
   'myApp.templatePatient',
   'myApp.templateDoctor',
@@ -21,9 +19,9 @@ angular.module('myApp', [
   'myApp.CommentRegister',
   'myApp.CommentsDoctorView',
   'myApp.RegisterDoctorView',
-  'myApp.LoginView',
   'myApp.Login',
-  'myApp.PatientChoiceView',
+  'myApp.DoctorProfile',
+  'myApp.InvestigatorProfile',
   'myApp.version',
   'services.factory',
   'chart.js'

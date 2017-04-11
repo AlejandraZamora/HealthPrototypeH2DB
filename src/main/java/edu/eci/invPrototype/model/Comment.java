@@ -14,6 +14,7 @@ public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "comment_id")
     private Long commentId;
     @Temporal(TemporalType.DATE)
     @Column(name="date")

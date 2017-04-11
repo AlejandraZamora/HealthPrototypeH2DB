@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.PatientProfile', ['ngRoute'])
+angular.module('myApp.InvestigatorProfile', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/PatientProfile', {
-    templateUrl: 'PatientProfile/PatientProfile.html',
-    controller: 'PatientProfileCtrl'
+  $routeProvider.when('/InvestigatorProfile', {
+    templateUrl: 'InvestigatorProfile/InvestigatorProfile.html',
+    controller: 'InvestigatorProfileCtrl'
   });
 }])
 
-.controller('PatientProfileCtrl', ['$rootScope', '$scope', 'person', '$location', function ($rootScope, $scope, person,$location) {
+.controller('InvestigatorProfileCtrl', ['$rootScope', '$scope', 'person', '$location', function ($rootScope, $scope, person,$location) {
 
     person.get({personId:""+$rootScope.RegisteredIdPerson})
                 .$promise.then(
@@ -19,7 +19,7 @@ angular.module('myApp.PatientProfile', ['ngRoute'])
                         },
                         //error
                         function( error ){
-                            console.log("El paciente no se encuentra registrado");
+                            console.log("error");
                         }
                 );
     $scope.continueUP=function(){
