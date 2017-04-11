@@ -47,12 +47,14 @@ public class InvPrototypeApplication {
 					.httpBasic()
 					.and()
 					.authorizeRequests()
-					.antMatchers("/app/**","/logout","/login").permitAll()
+					.antMatchers("/app/**","/logout","/login","/person/**").permitAll()
 					.anyRequest().authenticated().and()
 					.logout().logoutSuccessUrl("/")
 					.and().csrf()
 					.csrfTokenRepository(csrfTokenRepository()).and()
-					.addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);
+					.addFilterAfter(csrfHeaderFilter(), CsrfFilter.class)
+					.formLogin()
+					.loginPage("/app/index.html");
 		}
 
 		private OncePerRequestFilter csrfHeaderFilter() {

@@ -28,6 +28,7 @@ angular.module('myApp.HomeDoctor', ['ngRoute'])
                 //error
                 function( error ){
                     alert("El paciente no se encuentra registrado");
+                    this.NuevaConsulta();
                 }
         );
 
