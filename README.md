@@ -13,7 +13,7 @@ El API ofrece el siguiente recurso principal:
 
 - person
 
-Este se pueden usar así:
+Este se puede usar así:
 
 ### Componentes de los recursos
 
